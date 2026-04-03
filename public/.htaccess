@@ -1,0 +1,15 @@
+# Rewrite Engine aktif edilir
+RewriteEngine On
+
+# Fiziksel dosya yoksa devam et
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Fiziksel dizin yoksa devam et
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Tüm istekleri index.php'ye yönlendir
+RewriteRule ^ index.php [L]
+
+# Dizin içeriğini gösterme
+Options -Indexes
+
